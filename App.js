@@ -1,9 +1,13 @@
 import React from "react";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import Constants from "expo-constants";
 import MainApp from "./src/Main";
+import { ENV } from "./config";
+
+const env = Constants.manifest.extra.useDevApi ? ENV.dev : ENV.prod;
 
 const client = new ApolloClient({
-  uri: "https://contact-frontend-test-api.herokuapp.com/graphql",
+  uri: env.API_URI,
   cache: new InMemoryCache(),
 });
 
