@@ -1,22 +1,27 @@
 # interview-app-pairing
 
-Pairing exercise for App developers
+This is a simple React Native app built with Expo. It has two screens:
+
+1. Home
+2. Talent List
+
+The talent list screen gets some data from a GraphQL endpoint to show a list of talent. An item on the list can be tapped to view that profile.
 
 # Getting Started
-
-Before you start, please make sure you computer is set up for App development
 
 1. Clone this repository
 2. Install the Expo CLI, if you don't already have it installed (`npm install -g expo-cli`)
 3. `npm install`
-4. Run `npm start`
 
 ## Install Device Simulators
 
-For iOS simulator, you will need to download and install Xcode (macOS only)
+Make sure you have either an Android or iOS simulator installed.
 
-https://developer.apple.com/xcode/
+- [iOS](https://docs.expo.dev/workflow/ios-simulator/)
+- [Android](https://docs.expo.dev/workflow/android-studio-emulator/)
 
-For Android, download Android Studio and follow Expo's guide on setting up a device simulator
+## Running the app
 
-https://docs.expo.dev/workflow/android-studio-emulator/
+```bash
+npm run ios # or npm run android
+```
