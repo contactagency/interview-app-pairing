@@ -12,9 +12,13 @@ const Tab = createBottomTabNavigator();
 
 const TalentFeedStack = () => {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="Talent List" component={TalentFeed} />
-      <Stack.Screen name="Talent" component={TalentScreen} />
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen name="Talent List Screen" component={TalentFeed} />
+      <Stack.Screen name="Talent Screen" component={TalentScreen} />
     </Stack.Navigator>
   );
 };
