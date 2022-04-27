@@ -1,23 +1,16 @@
-import React from 'react';
-import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
-import MainApp from './src/Main';
+import React from "react";
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import MainApp from "./src/Main";
 
-import getEnvVars from './config';
-const { API_URI } = getEnvVars();
-
-const uri = API_URI;
-const cache = new InMemoryCache();
-
-// configure Apollo Client
 const client = new ApolloClient({
-  uri,
-  cache
+  uri: "https://contact-frontend-test-api.herokuapp.com/graphql",
+  cache: new InMemoryCache(),
 });
 
 export default function App() {
   return (
     <ApolloProvider client={client}>
-       <MainApp />
+      <MainApp />
     </ApolloProvider>
   );
 }
