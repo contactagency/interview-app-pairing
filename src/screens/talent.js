@@ -11,6 +11,8 @@ const GET_TALENT = gql`
     talent(id: $id) {
       id
       name
+      eyes
+      height
       dob
       avatar
     }
