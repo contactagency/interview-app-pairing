@@ -26,4 +26,4 @@ Make sure you have either an Android or iOS simulator installed.
 npm run ios # or npm run android
 ```
 
-To point the app to a local server running at `http://localhost:4000/api`, change the `USE_DEV_API` in the `.env` file to `false`.
+To point the app to a local server running at `http://localhost:4000/api`, change the `USE_DEV_API` in the `.env` file to `true`.
