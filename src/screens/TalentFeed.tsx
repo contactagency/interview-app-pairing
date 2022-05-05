@@ -1,9 +1,9 @@
 import React from "react";
-import { Text } from "react-native";
 import { useQuery, gql } from "@apollo/client";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import TalentList from "../components/TalentList";
 import Loading from "../components/Loading";
+import Error from "../components/Error";
 import { TalentStackRoutes } from "../routes";
 import { Talent } from "../types";
 
@@ -27,7 +27,8 @@ const TalentFeedScreen = ({
 
   if (loading) return <Loading />;
 
-  if (error || !data) return <Text>Error loading talent</Text>;
+  if (error) return <Error message={error.message} />;
+  if (!data) return <Error message="Error loading talent" />;
 
   return (
     <TalentList

@@ -1,9 +1,9 @@
 import React from "react";
-import { Text } from "react-native";
 import { useQuery, gql } from "@apollo/client";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import Talent from "../components/Talent";
 import Loading from "../components/Loading";
+import Error from "../components/Error";
 import { TalentStackRoutes } from "../routes";
 import { Talent as TalentType } from "../types";
 
@@ -31,8 +31,8 @@ const TalentProfileScreen = (
   });
 
   if (loading) return <Loading />;
-
-  if (error || !data) return <Text>Error! Talent not found</Text>;
+  if (error) return <Error message={error.message} />;
+  if (!data) return <Error message="Error! Talent not found" />;
 
   return <Talent talent={data.talent} />;
 };
